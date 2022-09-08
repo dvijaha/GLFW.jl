@@ -761,3 +761,7 @@ function standard_window_hints()
 		(AUX_BUFFERS,  0)
 	]
 end
+
+function GetCocoaWindow(window::Window)
+	ccall((:glfwGetCocoaWindow, libglfw), Ptr{Nothing}, (Ptr{Window},), window.handle)
+end
